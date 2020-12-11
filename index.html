@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title>Boolzapp</title>
+  </head>
+  <body>
+
+    <div id="root">
+
+      <div class="wrapper">
+
+        <div class="container clearfix">
+
+          <div class="left">
+            <div class="user"></div>
+            <div class="notifications"></div>
+            <div class="search"></div>
+            <div class="contacts">
+
+              <ul>
+                <li v-for="item in contacts">
+                  {{ item.name }}
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+          <div class="right">
+            <div class="current-contact"></div>
+            <div class="messages"></div>
+            <div class="write-message"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
