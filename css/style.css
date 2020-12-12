@@ -145,6 +145,27 @@ ul {
   background-image: url("../img/background.png");
   background-size: cover;
   background-position: center;
+  padding: 40px;
+  overflow-y: scroll;
+}
+.message-send {
+  height: 60px;
+  text-align: right;
+}
+.message-received {
+  height: 60px;
+}
+.message-send span {
+  line-height: 60px;
+  background-color: #D5F9BA;
+  padding: 20px;
+  border-radius: 5px;
+}
+.message-received span {
+  line-height: 60px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
 }
 
 .write-message {
