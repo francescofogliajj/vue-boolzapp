@@ -123,6 +123,14 @@ ul {
   width: 100%;
   height: 70%;
   background-color: white;
+  overflow-y: scroll;
+}
+.contacts ul li {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  padding: 10px;
+  border-bottom: 1px solid lightgrey;
 }
 
 .current-contact {
@@ -143,4 +151,21 @@ ul {
   width: 100%;
   height: 10%;
   background-color: #F3EEEA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.write-message input {
+  width: 80%;
+  height: 70%;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding-left: 15px;
+}
+.write-message i {
+  width: 10%;
+  text-align: center;
+  color: #6B7376;
+  font-size: 25px;
 }

@@ -42,7 +42,8 @@
 
               <ul>
                 <li v-for="item in contacts">
-                  {{ item.name }}
+                  <img :src="item.avatar" alt="avatar">
+                  <h4>{{ item.name }}</h4>
                 </li>
               </ul>
 
@@ -52,7 +53,11 @@
           <div class="right">
             <div class="current-contact"></div>
             <div class="messages"></div>
-            <div class="write-message"></div>
+            <div class="write-message">
+              <i class="far fa-smile"></i>
+              <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+              <i class="fas fa-microphone"></i>
+            </div>
           </div>
 
         </div>
@@ -62,8 +67,7 @@
     </div>
 
     <!-- <i class="fas fa-paperclip"></i> -->
-    <!-- <i class="far fa-smile"></i> -->
-    <!-- <i class="fas fa-microphone"></i> -->
+
 
     <script src="js/script.js" charset="utf-8"></script>
   </body>
