@@ -10,6 +10,15 @@
   clear: both;
 }
 
+img {
+  height: 50px;
+  border-radius: 50%;
+}
+
+i {
+  cursor: pointer;
+}
+/* --------------------------------------------------------- */
 
 .wrapper {
   width: 100%;
@@ -40,6 +49,24 @@
   width: 100%;
   height: 10%;
   background-color: #EAEAEA;
+  border-right: 1px solid #B1B1B1;
+  padding: 10px;
+  display: flex;
+}
+.user-info {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.user-icons {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.user-icons i {
+  margin-left: 10px;
+  color: #B1B1B1;
 }
 
 .notifications {

@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.css" integrity="sha512-f73UKwzP1Oia45eqHpHwzJtFLpvULbhVpEJfaWczo/ZCV5NWSnK4vLDnjTaMps28ocZ05RbI83k2RlQH92zy7A==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <title>Boolzapp</title>
@@ -15,7 +16,17 @@
         <div class="container clearfix">
 
           <div class="left">
-            <div class="user"></div>
+            <div class="user">
+              <div class="user-info">
+                <img src="img/avatar.png" alt="avatar">
+                <h4>Nome utente</h4>
+              </div>
+              <div class="user-icons">
+                <i class="fas fa-circle-notch"></i>
+                <i class="fas fa-comment-alt"></i>
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
             <div class="notifications"></div>
             <div class="search"></div>
             <div class="contacts">
@@ -40,6 +51,14 @@
       </div>
 
     </div>
+
+
+
+
+    <!-- <i class="fas fa-search"></i> -->
+    <!-- <i class="fas fa-paperclip"></i> -->
+    <!-- <i class="far fa-smile"></i> -->
+    <!-- <i class="fas fa-microphone"></i> -->
 
     <script src="js/script.js" charset="utf-8"></script>
   </body>
