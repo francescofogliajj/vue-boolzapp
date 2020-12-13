@@ -67,15 +67,16 @@ ul {
   display: flex;
   align-items: center;
 }
-.user-icons {
+.icons {
   width: 50%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-.user-icons i {
-  margin-left: 10px;
+.icons i {
+  margin-left: 15px;
   color: #B1B1B1;
+  font-size: 18px;
 }
 
 .notifications {
@@ -156,16 +157,6 @@ ul {
   width: 50%;
   display: flex;
   align-items: center;
-}
-.current-contact-icons {
-  width: 50%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.current-contact-icons i {
-  margin-left: 10px;
-  color: #B1B1B1;
 }
 
 .messages-box {
