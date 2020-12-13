@@ -136,6 +136,9 @@ ul {
 .contacts ul li:hover {
   background-color: #EAEAEA;
 }
+.activeContact {
+  background-color: #EAEAEA;
+}
 
 .current-contact {
   width: 100%;
@@ -160,7 +163,7 @@ ul {
   color: #B1B1B1;
 }
 
-.messages {
+.messages-box {
   width: 100%;
   height: 80%;
   background-image: url("../img/background.png");
@@ -169,20 +172,23 @@ ul {
   padding: 40px;
   overflow-y: scroll;
 }
-.message-send {
+.message {
+  margin: 10px 0;
+}
+.sent {
   height: 60px;
   text-align: right;
 }
-.message-received {
+.received {
   height: 60px;
 }
-.message-send span {
+.sent span {
   line-height: 60px;
   background-color: #D5F9BA;
   padding: 20px;
   border-radius: 5px;
 }
-.message-received span {
+.received span {
   line-height: 60px;
   background-color: white;
   padding: 20px;

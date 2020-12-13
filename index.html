@@ -41,9 +41,9 @@
             <div class="contacts">
 
               <ul>
-                <li v-for="item in contacts">
-                  <img :src="item.avatar" alt="avatar">
-                  <h4>{{ item.name }}</h4>
+                <li v-for="(contact, index) in contacts" @click="activeContact = index" :class="(activeContact == index) ? 'activeContact' : 'null'">
+                  <img :src="contact.avatar" alt="avatar">
+                  <h4>{{ contact.name }}</h4>
                 </li>
               </ul>
 
@@ -52,9 +52,9 @@
 
           <div class="right">
             <div class="current-contact">
-              <div class="current-contact-info">
-                <img src="img/avatar.png" alt="avatar">
-                <h4>Nome Utente</h4>
+              <div class="current-contact-info" v-for="(contact, index) in contacts" v-if="(activeContact == index)">
+                <img :src="contact.avatar" alt="avatar">
+                <h4>{{ contact.name }}</h4>
               </div>
               <div class="current-contact-icons">
                 <i class="fas fa-search"></i>
@@ -62,12 +62,14 @@
                 <i class="fas fa-ellipsis-v"></i>
               </div>
             </div>
-            <div class="messages">
-              <div class="message-send">
-                <span>Messaggio inviato</span>
-              </div>
-              <div class="message-received">
-                <span>Messaggio ricevuto</span>
+            <div class="messages-box">
+              <div class="message" v-for="message in contacts[activeContact].messages">
+                <div :class="(message.status == 'sent') ? 'sent' : 'received'">
+                  <span>
+                    {{ message.text }}
+                    {{ message.date }}
+                  </span>
+                </div>
               </div>
             </div>
             <div class="write-message">
