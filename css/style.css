@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+
 .clearfix::after {
   content: "";
   display: table;
@@ -169,7 +174,7 @@ ul {
   background-image: url("../img/background.png");
   background-size: cover;
   background-position: center;
-  padding: 40px;
+  padding: 60px;
   overflow-y: scroll;
 }
 .message {
@@ -183,16 +188,24 @@ ul {
   height: 60px;
 }
 .sent span {
-  line-height: 60px;
   background-color: #D5F9BA;
-  padding: 20px;
-  border-radius: 5px;
 }
 .received span {
-  line-height: 60px;
   background-color: white;
-  padding: 20px;
-  border-radius: 5px;
+}
+span {
+  line-height: 60px;
+  padding: 20px 40px;
+  border-radius: 10px;
+  position: relative;
+}
+time {
+  line-height: normal;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  font-size: 10px;
+  color: grey;
 }
 
 .write-message {
