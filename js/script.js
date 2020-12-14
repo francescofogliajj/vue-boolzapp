@@ -88,7 +88,18 @@ var app = new Vue({
 		    ]
       }
     ],
-    activeContact: 0
+    activeContact: 0,
+    newMessage : ""
   },
+
+  methods: {
+    sendMessage() {
+      this.contacts[this.activeContact].messages.push({
+        text: this.newMessage,
+        status:'sent',
+      });
+      this.newMessage = ""
+    }
+  }
 
 });
