@@ -88,17 +88,22 @@ var app = new Vue({
 		    ]
       }
     ],
-    activeContact: 0,
+    activeIndex: 0,
     newMessage : "",
     newSendMessage: {},
 		newReceivedMessage: {},
+    userInput: "",
   },
 
   methods: {
 
+    addActiveClass(index) {
+			this.activeIndex = index;
+		},
+
     sendMessage() {
 
-			let contactMessages = this.contacts[this.activeContact].messages;
+			let contactMessages = this.contacts[this.activeIndex].messages;
 			this.newSendMessage.text = this.newMessage;
 			this.newMessage = "";
 			this.newSendMessage.status = "sent";
@@ -113,6 +118,17 @@ var app = new Vue({
 			}, 1000);
 
 		},
+
+    searchContact() {
+			this.contacts.forEach( (contact) => {
+				contact.visible = false;
+
+				if (contact.name.includes(this.userInput)) {
+					contact.visible = true;
+				}
+
+			});
+    },
 
   }
 

@@ -142,7 +142,7 @@ ul {
 .contacts ul li:hover {
   background-color: #EAEAEA;
 }
-.activeContact {
+.activeIndex {
   background-color: #EAEAEA;
 }
 
