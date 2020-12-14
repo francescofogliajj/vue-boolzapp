@@ -43,7 +43,8 @@
             <div class="contacts">
 
               <ul>
-                <li v-for="(contact, index) in contacts" @click="activeContact = index" :class="(activeContact == index) ? 'activeContact' : 'null'">
+                <li
+                v-for="(contact, index) in contacts" @click="activeContact = index" :class="(activeContact == index) ? 'activeContact' : 'null'">
                   <img :src="contact.avatar" alt="avatar">
                   <h4>{{ contact.name }}</h4>
                 </li>

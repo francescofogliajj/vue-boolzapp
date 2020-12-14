@@ -89,17 +89,31 @@ var app = new Vue({
       }
     ],
     activeContact: 0,
-    newMessage : ""
+    newMessage : "",
+    newSendMessage: {},
+		newReceivedMessage: {},
   },
 
   methods: {
+
     sendMessage() {
-      this.contacts[this.activeContact].messages.push({
-        text: this.newMessage,
-        status:'sent',
-      });
-      this.newMessage = ""
-    }
+
+			let contactMessages = this.contacts[this.activeContact].messages;
+			this.newSendMessage.text = this.newMessage;
+			this.newMessage = "";
+			this.newSendMessage.status = "sent";
+			contactMessages.push(this.newSendMessage);
+			this.newSendMessage = {};
+
+			setTimeout( () => {
+				this.newReceivedMessage.text = "Ok",
+				this.newReceivedMessage.status = "received",
+				contactMessages.push(this.newReceivedMessage);
+				this.newReceivedMessage = {};
+			}, 1000);
+
+		},
+
   }
 
 });
