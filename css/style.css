@@ -138,6 +138,7 @@ ul {
   padding: 10px;
   border-bottom: 1px solid lightgrey;
   cursor: pointer;
+  position: relative;
 }
 .contacts ul li:hover {
   background-color: #EAEAEA;
@@ -146,6 +147,13 @@ ul {
   background-color: #EAEAEA;
 }
 span {
+  color: grey;
+}
+li > time {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 10px;
   color: grey;
 }
 
@@ -198,7 +206,7 @@ p {
   word-break: break-all;
   position: relative;
 }
-time {
+p > time {
   position: absolute;
   bottom: 5px;
   right: 5px;
