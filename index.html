@@ -47,7 +47,7 @@
                 <img :src="'img/avatar' + contact.avatar + '.png'" alt="avatar">
                 <div>
                   <h4>{{ contact.name }}</h4>
-                  <span>{{contact.messages[contact.messages.length-1].text}}</span>
+                  <span>{{ contact.messages[contact.messages.length-1].text }}</span>
                 </div>
               </li>
             </ul>
@@ -59,7 +59,11 @@
           <div class="current-contact">
             <div class="current-contact-info">
               <img :src="'img/avatar' + contacts[activeIndex].avatar + '.png'" alt="avatar">
-              <h4>{{ contacts[activeIndex].name }}</h4>
+              <div>
+                <h4>{{ contacts[activeIndex].name }}</h4>
+                <span> Ultimo accesso oggi alle
+                  {{ contacts[activeIndex].messages[contacts[activeIndex].messages.length-1].date }}</span>
+              </div>
             </div>
             <div class="icons">
               <i class="fas fa-search"></i>
