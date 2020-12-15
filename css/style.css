@@ -156,6 +156,13 @@ li > time {
   font-size: 10px;
   color: grey;
 }
+li > div > span {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 260px;
+}
 
 .current-contact {
   width: 100%;
