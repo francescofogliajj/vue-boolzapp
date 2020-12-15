@@ -46,7 +46,7 @@
               <ul>
                 <li v-if="contact.visible"
                     v-for="(contact, index) in contacts" @click="addActiveClass(index)" :class="(activeIndex == index) ? 'activeIndex' : ''">
-                  <img :src="contact.avatar" alt="avatar">
+                  <img :src="'img/avatar' + contact.avatar + '.png'" alt="avatar">
                   <h4>{{ contact.name }}</h4>
                 </li>
               </ul>
@@ -56,9 +56,9 @@
 
           <div class="right">
             <div class="current-contact">
-              <div class="current-contact-info" v-for="(contact, index) in contacts" v-if="(activeIndex == index)">
-                <img :src="contact.avatar" alt="avatar">
-                <h4>{{ contact.name }}</h4>
+              <div class="current-contact-info">
+                <img :src="'img/avatar' + contacts[activeIndex].avatar + '.png'" alt="avatar">
+                <h4>{{ contacts[activeIndex].name }}</h4>
               </div>
               <div class="icons">
                 <i class="fas fa-search"></i>
