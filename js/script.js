@@ -90,8 +90,6 @@ var app = new Vue({
     ],
     activeIndex: 0,
     newMessage : "",
-    newSendMessage: {},
-		newReceivedMessage: {},
     userInput: "",
   },
 
@@ -103,19 +101,22 @@ var app = new Vue({
 
     sendMessage() {
 
-			let contactMessages = this.contacts[this.activeIndex].messages;
-			this.newSendMessage.text = this.newMessage;
-			this.newMessage = "";
-			this.newSendMessage.status = "sent";
-			contactMessages.push(this.newSendMessage);
-			this.newSendMessage = {};
+      let newObj = {
+        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+        text: this.newMessage,
+        status: 'sent'
+      };
+      this.contacts[this.activeIndex].messages.push(newObj);
+      this.newMessage = "";
 
-			setTimeout( () => {
-				this.newReceivedMessage.text = "Ok",
-				this.newReceivedMessage.status = "received",
-				contactMessages.push(this.newReceivedMessage);
-				this.newReceivedMessage = {};
-			}, 1000);
+      setTimeout( () => {
+        let newAutoObj = {
+          date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+          text: 'ok',
+          status: 'received'
+        }
+        this.contacts[this.activeIndex].messages.push(newAutoObj);
+      }, 1000);
 
 		},
 
