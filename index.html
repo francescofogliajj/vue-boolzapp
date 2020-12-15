@@ -2,11 +2,16 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <!-- Font Awesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.css" integrity="sha512-f73UKwzP1Oia45eqHpHwzJtFLpvULbhVpEJfaWczo/ZCV5NWSnK4vLDnjTaMps28ocZ05RbI83k2RlQH92zy7A==" crossorigin="anonymous" />
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- style.css -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Day.js cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.7/dayjs.min.js" integrity="sha512-kZ+x2gdehn6OZMWZSp3Vt5R+v9hQTYEATQwaUfWquhxbvNVAy6IRtYs7asdyxKUTqG0I5ZqBqnzcBrpnHJCAGw==" crossorigin="anonymous"></script>
+    <!-- Vue.js -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <title>Boolzapp</title>
   </head>
@@ -16,6 +21,7 @@
 
       <div class="container clearfix">
 
+        <!-- Aside -->
         <div class="left">
           <div class="user">
             <div class="user-info">
@@ -35,12 +41,14 @@
               <a href="#">Attiva notifiche desktop</a>
             </div>
           </div>
+          <!-- Search -->
           <div class="search">
             <i class="fas fa-search"></i>
             <input v-model="userInput" @keyup="searchContact" type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
           </div>
+          <!-- /Search -->
+          <!-- Contacts -->
           <div class="contacts">
-
             <ul>
               <li v-if="contact.visible"
                 v-for="(contact, index) in contacts" @click="addActiveClass(index)" :class="(activeIndex == index) ? 'activeIndex' : ''">
@@ -52,11 +60,14 @@
                 <time>{{ contact.messages[contact.messages.length-1].date }}</time>
               </li>
             </ul>
-
           </div>
+          <!-- /Contacts -->
         </div>
+        <!-- /Aside -->
 
+        <!-- Main -->
         <div class="right">
+          <!-- Current Contact -->
           <div class="current-contact">
             <div class="current-contact-info">
               <img :src="'img/avatar' + contacts[activeIndex].avatar + '.png'" alt="avatar">
@@ -72,6 +83,8 @@
               <i class="fas fa-ellipsis-v"></i>
             </div>
           </div>
+          <!-- /Current Contact -->
+          <!-- Message Box -->
           <div class="messages-box">
             <div class="message" v-for="message in contacts[activeIndex].messages">
               <div :class="message.status">
@@ -82,12 +95,16 @@
               </div>
             </div>
           </div>
+          <!-- /Message Box -->
+          <!-- Write Message -->
           <div class="write-message">
             <i class="far fa-smile"></i>
             <input v-model ="newMessage" @keyup.enter="sendMessage" type="text" name="" value="" placeholder="Scrivi un messaggio">
             <i @click="sendMessage" class="fas fa-microphone"></i>
           </div>
+          <!-- /Write Message -->
         </div>
+        <!-- /Main -->
 
       </div>
 

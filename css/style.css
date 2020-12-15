@@ -54,6 +54,7 @@ ul {
   float: right;
 }
 
+/* Aside */
 .user {
   width: 100%;
   height: 10%;
@@ -101,6 +102,7 @@ ul {
   color: grey;
 }
 
+/* Search */
 .search {
   width: 100%;
   height: 10%;
@@ -125,6 +127,7 @@ ul {
   color: #B1B1B1;
 }
 
+/* Contacts */
 .contacts {
   width: 100%;
   height: 70%;
@@ -164,6 +167,8 @@ li > div > span {
   width: 260px;
 }
 
+/* Main */
+/* Current Contact */
 .current-contact {
   width: 100%;
   height: 10%;
@@ -177,6 +182,7 @@ li > div > span {
   align-items: center;
 }
 
+/* Message Box */
 .messages-box {
   width: 100%;
   height: 80%;
@@ -221,6 +227,7 @@ p > time {
   color: grey;
 }
 
+/* Write Message */
 .write-message {
   width: 100%;
   height: 10%;
