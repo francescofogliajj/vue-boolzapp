@@ -124,7 +124,10 @@ var app = new Vue({
 			this.contacts.forEach( (contact) => {
 				contact.visible = false;
 
-				if (contact.name.includes(this.userInput)) {
+        let nameLowerCase = contact.name.toLowerCase();
+        let userInputLowerCase = this.userInput.toLowerCase();
+
+				if (nameLowerCase.includes(userInputLowerCase)) {
 					contact.visible = true;
 				}
 
