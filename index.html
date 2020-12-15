@@ -67,7 +67,7 @@
             </div>
             <div class="messages-box">
               <div class="message" v-for="message in contacts[activeIndex].messages">
-                <div :class="(message.status == 'sent') ? 'sent' : 'received'">
+                <div :class="message.status">
                   <span>
                     {{ message.text }}
                     <time>{{ message.date }}</time>
