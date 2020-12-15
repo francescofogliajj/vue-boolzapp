@@ -45,7 +45,10 @@
               <li v-if="contact.visible"
                   v-for="(contact, index) in contacts" @click="addActiveClass(index)" :class="(activeIndex == index) ? 'activeIndex' : ''">
                 <img :src="'img/avatar' + contact.avatar + '.png'" alt="avatar">
-                <h4>{{ contact.name }}</h4>
+                <div>
+                  <h4>{{ contact.name }}</h4>
+                  <span>{{contact.messages[contact.messages.length-1].text}}</span>
+                </div>
               </li>
             </ul>
 

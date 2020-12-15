@@ -145,6 +145,9 @@ ul {
 .activeIndex {
   background-color: #EAEAEA;
 }
+span {
+  color: grey;
+}
 
 .current-contact {
   width: 100%;
