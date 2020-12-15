@@ -29,7 +29,7 @@ ul {
 }
 /* -------------------------------------------------------- */
 
-.wrapper {
+#root {
   width: 100%;
   height: 100vh;
   background: linear-gradient(to bottom, #009688 0%, #009688 20%, #DDDBD1 20%, #DDDBD1 100%);
@@ -172,26 +172,30 @@ ul {
   margin: 10px 0;
 }
 .sent {
-  height: 60px;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
 }
 .received {
-  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
 }
-.sent span {
+.sent p {
   background-color: #D5F9BA;
 }
-.received span {
+.received p {
   background-color: white;
 }
-span {
-  line-height: 60px;
-  padding: 20px 40px;
+p {
+  width: 290px;
+  padding: 20px;
   border-radius: 10px;
+  text-align: left;
+  word-break: break-all;
   position: relative;
 }
 time {
-  line-height: normal;
   position: absolute;
   bottom: 5px;
   right: 5px;

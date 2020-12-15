@@ -14,75 +14,71 @@
 
     <div id="root">
 
-      <div class="wrapper">
+      <div class="container clearfix">
 
-        <div class="container clearfix">
+        <div class="left">
+          <div class="user">
+            <div class="user-info">
+              <img src="img/avatar.png" alt="avatar">
+              <h4>Nome Utente</h4>
+            </div>
+            <div class="icons">
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+          </div>
+          <div class="notifications">
+            <i class="fas fa-bell-slash"></i>
+            <div>
+              <h4>Ricevi notifiche di nuovi messaggi</h4>
+              <a href="#">Attiva notifiche desktop</a>
+            </div>
+          </div>
+          <div class="search">
+            <i class="fas fa-search"></i>
+            <input v-model="userInput" @keyDown="searchContact" type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+          </div>
+          <div class="contacts">
 
-          <div class="left">
-            <div class="user">
-              <div class="user-info">
-                <img src="img/avatar.png" alt="avatar">
-                <h4>Nome Utente</h4>
-              </div>
-              <div class="icons">
-                <i class="fas fa-circle-notch"></i>
-                <i class="fas fa-comment-alt"></i>
-                <i class="fas fa-ellipsis-v"></i>
-              </div>
+            <ul>
+              <li v-if="contact.visible"
+                  v-for="(contact, index) in contacts" @click="addActiveClass(index)" :class="(activeIndex == index) ? 'activeIndex' : ''">
+                <img :src="'img/avatar' + contact.avatar + '.png'" alt="avatar">
+                <h4>{{ contact.name }}</h4>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="current-contact">
+            <div class="current-contact-info">
+              <img :src="'img/avatar' + contacts[activeIndex].avatar + '.png'" alt="avatar">
+              <h4>{{ contacts[activeIndex].name }}</h4>
             </div>
-            <div class="notifications">
-              <i class="fas fa-bell-slash"></i>
-              <div>
-                <h4>Ricevi notifiche di nuovi messaggi</h4>
-                <a href="#">Attiva notifiche desktop</a>
-              </div>
-            </div>
-            <div class="search">
+            <div class="icons">
               <i class="fas fa-search"></i>
-              <input v-model="userInput" @keyDown="searchContact" type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
-            </div>
-            <div class="contacts">
-
-              <ul>
-                <li v-if="contact.visible"
-                    v-for="(contact, index) in contacts" @click="addActiveClass(index)" :class="(activeIndex == index) ? 'activeIndex' : ''">
-                  <img :src="'img/avatar' + contact.avatar + '.png'" alt="avatar">
-                  <h4>{{ contact.name }}</h4>
-                </li>
-              </ul>
-
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
             </div>
           </div>
-
-          <div class="right">
-            <div class="current-contact">
-              <div class="current-contact-info">
-                <img :src="'img/avatar' + contacts[activeIndex].avatar + '.png'" alt="avatar">
-                <h4>{{ contacts[activeIndex].name }}</h4>
+          <div class="messages-box">
+            <div class="message" v-for="message in contacts[activeIndex].messages">
+              <div :class="message.status">
+                <p>
+                  {{ message.text }}
+                  <time>{{ message.date }}</time>
+                </p>
               </div>
-              <div class="icons">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-paperclip"></i>
-                <i class="fas fa-ellipsis-v"></i>
-              </div>
-            </div>
-            <div class="messages-box">
-              <div class="message" v-for="message in contacts[activeIndex].messages">
-                <div :class="message.status">
-                  <span>
-                    {{ message.text }}
-                    <time>{{ message.date }}</time>
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div class="write-message">
-              <i class="far fa-smile"></i>
-              <input v-model ="newMessage" @keyup.enter="sendMessage" type="text" name="" value="" placeholder="Scrivi un messaggio">
-              <i @click="sendMessage" class="fas fa-microphone"></i>
             </div>
           </div>
-
+          <div class="write-message">
+            <i class="far fa-smile"></i>
+            <input v-model ="newMessage" @keyup.enter="sendMessage" type="text" name="" value="" placeholder="Scrivi un messaggio">
+            <i @click="sendMessage" class="fas fa-microphone"></i>
+          </div>
         </div>
 
       </div>
