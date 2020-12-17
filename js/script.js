@@ -90,7 +90,7 @@ var app = new Vue({
     ],
     activeIndex: 0,
     newMessage : "",
-    userInput: "",
+    userInput: ""
   },
 
   methods: {
@@ -132,7 +132,7 @@ var app = new Vue({
 				}
 
 			});
-    },
+    }
 
   }
 
