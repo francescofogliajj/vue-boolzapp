@@ -90,7 +90,9 @@ var app = new Vue({
     ],
     activeIndex: 0,
     newMessage : "",
-    userInput: ""
+    userInput: "",
+    dropdownIndex: "",
+    dropdownDisplay: false
   },
 
   methods: {
@@ -132,6 +134,26 @@ var app = new Vue({
 				}
 
 			});
+    },
+
+    toggleDropdown(index) {
+      this.dropdownIndex = index;
+
+      if(this.dropdownDisplay) {
+        this.dropdownDisplay = false;
+      } else {
+        this.dropdownDisplay = true;
+      }
+
+    },
+
+    hideDropdown() {
+      this.dropdownDisplay = false;
+    },
+
+    deleteMessage(index) {
+      this.contacts[this.activeIndex].messages.splice(index, 1);
+      this.hideDropdown();
     }
 
   }

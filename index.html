@@ -55,9 +55,9 @@
                 <img :src="'img/avatar' + contact.avatar + '.png'" alt="avatar">
                 <div>
                   <h4>{{ contact.name }}</h4>
-                  <span>{{ contact.messages[contact.messages.length-1].text }}</span>
+                  <span v-if="contact.messages.length >= 1">{{ contact.messages[contact.messages.length-1].text }}</span>
                 </div>
-                <time>{{ contact.messages[contact.messages.length-1].date }}</time>
+                <time v-if="contact.messages.length >= 1">{{ contact.messages[contact.messages.length-1].date }}</time>
               </li>
             </ul>
           </div>
@@ -73,7 +73,7 @@
               <img :src="'img/avatar' + contacts[activeIndex].avatar + '.png'" alt="avatar">
               <div>
                 <h4>{{ contacts[activeIndex].name }}</h4>
-                <span> Ultimo accesso oggi alle
+                <span v-if="contacts[activeIndex].messages.length >= 1"> Ultimo accesso oggi alle
                   {{ contacts[activeIndex].messages[contacts[activeIndex].messages.length-1].date }}</span>
               </div>
             </div>
@@ -85,12 +85,15 @@
           </div>
           <!-- /Current Contact -->
           <!-- Messages Box -->
-          <div class="messages-box">
-            <div class="message" :class="message.status" v-for="message in contacts[activeIndex].messages">
-              <p>
-                {{ message.text }}
-                <time>{{ message.date }}</time>
-              </p>
+          <div class="messages-box clearfix">
+            <div class="message" :class="message.status" v-on:mouseleave="hideDropdown" v-for="(message, index) in contacts[activeIndex].messages">
+              {{ message.text }}
+              <time>{{ message.date }}</time>
+              <i @click="toggleDropdown(index)" class="fas fa-angle-down"></i>
+              <ul class="dropdown" v-if="index === dropdownIndex && dropdownDisplay">
+                <li>Message info</li>
+                <li @click="deleteMessage(index)">Delete message</li>
+              </ul>
             </div>
           </div>
           <!-- /Messages Box -->

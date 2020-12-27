@@ -193,38 +193,54 @@ li > div > span {
   overflow-y: scroll;
 }
 .message {
-  margin: 10px 0;
-}
-.sent {
-  display: flex;
-  justify-content: flex-end;
-  align-content: center;
-}
-.received {
-  display: flex;
-  justify-content: flex-start;
-  align-content: center;
-}
-.sent p {
-  background-color: #D5F9BA;
-}
-.received p {
-  background-color: white;
-}
-p {
   width: 290px;
+  margin: 10px 0;
   padding: 20px;
   border-radius: 10px;
-  text-align: left;
   word-break: break-all;
   position: relative;
 }
-p > time {
+.sent {
+  background-color: #D5F9BA;
+  float: right;
+  clear: both;
+}
+.received {
+  background-color: white;
+  float: left;
+  clear: both;
+}
+.message > time {
   position: absolute;
   bottom: 5px;
   right: 5px;
   font-size: 10px;
   color: grey;
+}
+.fa-angle-down {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: grey;
+  font-size: 18px;
+}
+.dropdown {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.dropdown li {
+  margin: 10px;
+  color: grey;
+  cursor: pointer;
+}
+.dropdown li:hover {
+  color: black;
 }
 
 /* Write Message */
